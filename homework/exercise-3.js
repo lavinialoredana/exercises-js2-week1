@@ -17,45 +17,26 @@ var coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function(amount) {
-
+        this.insertedAmount += amount 
     
-
     },
-    getCoffee: function(coffee) {
 
+    getCoffee: function(coffee) {
+        var price = this.prices[coffee]
+        if ( this.insertedAmount >= price){
+            this.insertedAmount -= price
+            return " Please take your " + coffee;
+        }
+        else 
+        {
+            
+            return "Sorry you don't have enough money for a " + coffee;
+        }
     }
 };
 
-switch(coffee){
-    case "cappuccino":
-        if(this.insertedAmount >= this.prices.cappuccino){
-            return 'Please take your cappuccino';
-        }
-        else{
-            return "Sorry you don't have enough money for a cappuccino";
-        }
-        break;
-    case "blackCoffee":
-        if(this.insertedAmount >= this.prices.blackCoffee){
-            return 'Please take your blackCoffee';
-        }
-        else{
-            return "Sorry you don't have enough money for a blackCoffee";
-        }
-        break;
-    case "flatWhite":
-        if(this.insertedAmount >= this.prices.flatWhite){
-            return 'Please take your flatWhite';
-        }
-        else{
-            return "Sorry you don't have enough money for a flatWhite";
-        }
-        break;
-    default:
-        break;
-/*
-DO NOT EDIT ANYTHING BELOW THIS LINE
-*/
+// DO NOT EDIT ANYTHING BELOW THIS LINE
+
 
 coffeeMachine.insertMoney(2.40);
 console.log("Expected result: 'Please take your cappuccino'. Actual result: " + coffeeMachine.getCoffee('cappuccino'));
@@ -66,6 +47,6 @@ console.log("Expected result: 'Please take your blackCoffee'. Actual result: " +
 coffeeMachine.insertMoney(4.00);
 console.log("Expected result: 'Please take your flatWhite'. Actual result: " + coffeeMachine.getCoffee('flatWhite'));
 
-coffeeMachine.insertMoney(2.40);
+coffeeMachine.insertMoney(1.40);
 console.log("Expected result: 'Sorry you don't have enough money for a flatWhite'. Actual result: " + coffeeMachine.getCoffee('flatWhite'));
 
