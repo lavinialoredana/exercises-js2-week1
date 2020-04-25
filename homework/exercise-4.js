@@ -10,7 +10,7 @@ all the restaurant names which have the required number of seats available at th
 2) Define a method findRestaurantServingDish which takes a dish name in parameter and returns
 all the restaurant names serving this dish.
 
-3) Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow in parameter (center, west),
+3) Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow as a parameter (center, west),
 and returns the number of restaurants in this area.
 */
 
@@ -53,7 +53,9 @@ var restaurants = [restaurant1, restaurant2, restaurant3];
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
-
+function getName(restaurant) {
+    return restaurant.name;
+}
 
 var restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
@@ -61,15 +63,32 @@ var restaurantFinderApplication = {
     restaurants: restaurants,
     findAvailableRestaurants: function(numberOfPeople) {
         // Complete here
-        if (restaurant.numberOfCustomers >= 5 && numberOfPeople ===restaurant.numberOfCustomers){
-            return restaurants.filter(numberOfPeople)
-        }
+       
+          return restaurants.filter(function (restaurant) {
+             var freeSeats = restaurant.totalSeats - restaurant.numberOfCustomers;
+            return freeSeats >= numberOfPeople;
+         } ).map(getName)
     },
+
     findRestaurantServingDish: function(dishName) {
+
         // Complete here
+
+        return restaurants.filter( function(restaurant) {
+         return restaurant.menu.includes (dishName);
+         
+        }).map(getName)
+      
+    
     },
     countNumberOfRestaurantsInArea: function(area) {
+    
         // Complete here
+
+        return restaurants.filter( function(restaurant){  
+            return restaurant.address.area === area
+
+        }).length
     }
 };
 
