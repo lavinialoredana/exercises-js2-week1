@@ -34,17 +34,23 @@ var destination4 = {
 
 var travelDestinations = [destination1, destination2, destination3, destination4];
 
+function destinations500Km(destinationName){
+    return destination.distanceKms <= 500;
+
+};
+
 /* 
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
 
-var destinationNamesWithin500Kms = // Complete here
+var destinationNamesWithin500Kms = travelDestinations.filter(destinations500Km);// Complete here
+console.log(destinationNamesWithin500Kms);
 
-var destinationNameReachableByFerry = // Complete here
+var destinationNameReachableByFerry = [];// Complete here
 
-var destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+var destinationNamesMoreThan300KmsAwayByTrain =[]; // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*

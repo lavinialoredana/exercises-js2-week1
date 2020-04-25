@@ -15,5 +15,14 @@ var car = {
     doors: 5
 };
 
+
 */
+
+var cherry = {
+    type: " tree",
+    fruits: " cherries",
+    maxHeight: "16 meters"
+};
+
+console.log(cherry)
 

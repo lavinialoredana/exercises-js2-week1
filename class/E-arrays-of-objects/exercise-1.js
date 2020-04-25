@@ -24,12 +24,19 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+ function getName(persons){
+     return persons.name;
+ };
 
-var persons = // Complete here
+ function getAge(persons){
+     return persons.age < 28;
+ };
 
-var personNames = // Complete here
+var persons = [person1, person2, person3];// Complete here
 
-var personsYoungerThan28YearsOld = // Complete here
+var personNames = persons.map(getName); // Complete here
+
+var personsYoungerThan28YearsOld = persons.filter(getAge);// Complete here
 
 
 /*

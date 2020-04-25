@@ -28,21 +28,24 @@ var storeBranches = {
       intern: 'Sarah'
     }
   }
-}
+};
 
 
 // ONLY EDIT BELOW THIS LINE
 
 // # 1
+var stores = Object.keys(storeBranches);
 // prints [ 'glasgow', 'edinburgh' ]
-console.log()
+console.log(stores);
 
 // # 2
+var staffGlasgow = Object.keys(storeBranches.glasgow);
 // prints [ 'manager', 'assistant', 'interns' ]
-console.log()
+console.log(staffGlasgow);
 
 // # 3
+var interns = Object.keys(storeBranches.glasgow.interns);
 // prints [ 'head_intern', 'intern' ]
-console.log()
+console.log(interns);
 
 // ONLY EDIT ABOVE THIS LINE

@@ -61,6 +61,9 @@ var restaurantFinderApplication = {
     restaurants: restaurants,
     findAvailableRestaurants: function(numberOfPeople) {
         // Complete here
+        if (restaurant.numberOfCustomers >= 5 && numberOfPeople ===restaurant.numberOfCustomers){
+            return restaurants.filter(numberOfPeople)
+        }
     },
     findRestaurantServingDish: function(dishName) {
         // Complete here
