@@ -9,16 +9,18 @@ var person = {
     friends: ["John", "Nina"]
 };
 
-function makeFriend (name) {
-    if (name = person.friends.push(name)){
-        return person.friends;
-    };
+// we just defined the method on the object "person"
+person.makeFriend = function makeFriend (name){
+    this.friends.push(name);
 };
+
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
 person.makeFriend("Bob");
 
-
 console.log("Expected result: 'John,Nina,Bob'. Actual result: " + person.friends);
+
+
+
